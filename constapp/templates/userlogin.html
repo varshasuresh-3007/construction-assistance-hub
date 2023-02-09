@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        label{
+            color: aliceblue;
+        }
+        h1{
+            color:black;
+        }
+
+    </style>
+    <script src="https://kit.fontawesome.com/0d4230aee3.js" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body background="https://images.pexels.com/photos/6587864/pexels-photo-6587864.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1">
+{% include 'navbar.html' %}
+<form method="post">{% csrf_token %}
+    <center>
+        <h1 style="margin-top:100px">LOGIN TO YOUR ACCOUNT</h1>
+        <div class="container mt-5">
+            <div class="row">
+                <div class="col-6">
+                    <div class="input-group flex-nowrap" style="margin-left:250px">
+                        <label>USERNAME</label>&nbsp&nbsp
+                        <span class="input-group-text" id="addon-wrapping"><i class="fa-solid fa-user"></i></span>
+                        <input type="text" class="form-control" name="username" placeholder="Username"
+                               aria-label="Username"
+                               aria-describedby="addon-wrapping" style="background-color:black" >
+                    </div>
+                </div>
+                <div class="row mt-5">
+                    <div class="col-6">
+                        <div class="input-group flex-nowrap" style="margin-left:250px">
+                            <label>PASSWORD</label>&nbsp&nbsp
+                            <span class="input-group-text" id="addon-wrapping1"><i class="fa-sharp fa-solid fa-key"></i></span>
+                            <input type="text" class="form-control" name="password" placeholder="Password" aria-label="Password"
+                                   aria-describedby="addon-wrapping1" style="background-color:black">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <p>create an account<a href="http://127.0.0.1:8000/constapp/userreg/" style="font-size:20px">register</a></p>
+            <button type="submit" class="btn btn-success" style="font-size:20px;width:100px;margin-bottom:150px">Login</button>
+        </div>
+    </center>
+</form>
+{% include 'footer.html' %}
+
+</body>
+</html>

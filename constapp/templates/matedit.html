@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+<head>
+    <style>
+        body{
+        background-repeat:no-repeat;
+        width:100%;
+        }
+        h1{
+        color:white;
+        }
+        label{
+        color:white;
+        }
+
+    </style>
+    <script src="https://kit.fontawesome.com/b7e3f22cf6.js" crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body background="https://th.bing.com/th/id/R.ab82e32a31d2c51a6629c460ff3bd4c3?rik=l9A7%2f5pNi4rBRQ&riu=http%3a%2f%2fwww.publicdomainpictures.net%2fpictures%2f170000%2fvelka%2fgrunge-background-1463561668zRl.jpg&ehk=xzTbKwPLoNB%2ba5WFofmpb42FE%2bpNvZn2dY4vw4Y7xnw%3d&risl=&pid=ImgRaw&r=0">
+{% include 'navbar.html' %}
+<form method="post" enctype="multipart/form-data">{% csrf_token %}
+    <center>
+        <h1>ADD MATERIALS</h1>
+        <div class="container mt-5">
+            <div class="row mt-2">
+                <div class="col-7">
+                    <div class="input-group flex-nowrap" style="margin-left:250px">
+                        <label>COMPANY NAME</label>&nbsp&nbsp
+                        <span class="input-group-text" id="addon-wrapping2"><i class="fa-solid fa-user"></i></span>
+                        <input type="text" class="form-control" name="cname"
+                               aria-label="cname"
+                               aria-describedby="addon-wrapping3" style="background-color:black;color:white" value="{{a.cname}}">
+                    </div>
+                </div>
+
+            </div>
+            <div class="row mt-2">
+                <div class="col-9">
+                    <div class="input-group flex-nowrap">
+                        <label style="margin-left:247px">SELECT PRODUCT</label>&nbsp&nbsp
+                        <span class="input-group-text" id="addon-wrapping"><i class="fa-solid fa-user"></i></span>
+                        <select class="form-select" name="smat" style="height:40px;background-color:black;color:white" value="{{a.smat}}"
+                                required>
+                            <option>{{a.smat}}</option>
+                            <option value="CEMENT">CEMENT</option>
+                            <option value="STEEL">STEEL</option>
+                            <option value="METAL">METAL</option>
+                            <option value="SAND">SAND</option>
+                            <option value="BRICK">BRICK</option>
+                            <option value="TOOLS">TOOLS</option>
+
+
+
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div class="row mt-3">
+                <div class="col-9">
+                    <div class="input-group flex-nowrap">
+                        <label style="margin-left:333px">IMAGE</label>&nbsp&nbsp
+                        <span class="input-group-text" id="addon-wrapping10"><i class="fa-solid fa-user"></i></span>
+                        <img src="{% static image %}">
+                        <input type="file" class="form-control" name="image" placeholder="MATERIAL NAME"
+                               aria-label="image"
+                               aria-describedby="addon-wrapping3" style="background-color:black;color:white">
+                    </div>
+
+                </div>
+
+            </div>
+            <div class="row mt-3">
+                <div class="col-7">
+                    <div class="input-group flex-nowrap" style="margin-left:250px">
+                        <label>MATERIAL NAME</label>&nbsp&nbsp
+                        <span class="input-group-text" id="addon-wrapping3"><i class="fa-solid fa-user"></i></span>
+                        <input type="text" class="form-control" name="nmat" placeholder="MATERIAL NAME"
+                               aria-label="nmat"
+                               aria-describedby="addon-wrapping3" style="background-color:black;color:white" value="{{a.nmat}}">
+                    </div>
+                </div>
+            </div>
+            <div class="row mt-3">
+                <div class="col-4">
+                    <div class="input-group flex-nowrap" style="margin-left:250px">
+                        <label style="margin-left:47px">QUANTITY</label>&nbsp&nbsp
+                        <span class="input-group-text" id="addon-wrapping4"><i class="fa-solid fa-user"></i></span>
+                        <input type="number" class="form-control" name="quan" placeholder="QUANTITY"
+                               aria-label="quan"
+                               aria-describedby="addon-wrapping5" style="background-color:black;color:white" value="{{a.quan}}">
+                    </div>
+                </div>
+                <div class="col-3">
+                    <div class="input-group flex-nowrap" style="margin-left:250px">
+                        <label>PER</label>&nbsp&nbsp
+                        <span class="input-group-text" id="addon-wrapping6"><i class="fa-solid fa-user"></i></span>
+                        <select class="form-select" name="per" style="height:40px;background-color:black;color:white" value="{{a.per}}"
+                                required>
+                            <option>{{a.per}}</option>
+                            <option value="KG">KG</option>
+                            <option value="SQUARE-FEET">SQUARE-FEET</option>
+                            <option value="NUMBER">NUMBER</option>
+                            <option value="HOUR">HOUR</option>
+                            <option value="MINUTE">MINUTE</option>
+
+
+                        </select>
+                    </div>
+
+                </div>
+            </div>
+            <div class="row mt-3">
+                <div class="col-6">
+                    <div class="input-group flex-nowrap" style="margin-left:250px">
+                        <label style="margin-left:80px">PRICE</label>&nbsp&nbsp
+                        <span class="input-group-text" id="addon-wrapping8"><i class="fa-solid fa-user"></i></span>
+                        <input type="number" class="form-control" name="price" placeholder="PRICE"
+                               aria-label="price"
+                               aria-describedby="addon-wrapping3" style="background-color:black;color:white" value="{{a.price}}">
+                    </div>
+                </div>
+            </div>
+            <div class="row mt-3">
+                <div class="col-6">
+                    <div class="input-group flex-nowrap" style="margin-left:250px">
+                        <label style="margin-left:32px">DESCRIPTION</label>&nbsp&nbsp
+                        <span class="input-group-text" id="addon-wrapping9"><i class="fa-solid fa-user"></i></span>
+                        <textarea name="des" rows="10" cols="50" style="background-color:black;color:white"
+                                  placeholder="DESCRIPTION" value="{{a.des}}"></textarea>
+                    </div>
+
+                </div>
+            </div>
+            <br>
+            <button type="submit" class="btn btn-success">UPDATE</button>
+
+        </div>
+    </center>
+</form>
+<br><br>
+
+
+</div>
+{% include 'footer.html' %}
+
+</body>
+</html>

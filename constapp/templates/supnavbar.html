@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        .offcanvas-body{
+        background-image:url("https://images.pexels.com/photos/266643/pexels-photo-266643.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1");
+        }
+    </style>
+    <script src="https://kit.fontawesome.com/0d4230aee3.js" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg navbar-light " style="background-color:  black; height:100px;">
+    <a class="navbar-brand" href="#"><img
+            src="https://graphicsfamily.com/wp-content/uploads/2020/08/Construction-Logo-Design-Free-psd-scaled.jpg"
+            style="height:100px;width:150px;margin-right:800px;margin-left:30px"></a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto ">
+
+            <li class="nav-item active">
+                <a class="nav-link" href="http://127.0.0.1:8000/constapp/home/"
+                   style="color:bisque;margin-right:15px">Home <span
+                        class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="http://127.0.0.1:8000/constapp/aboutus/" style="color:bisque;margin-right:15px">About us</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="http://127.0.0.1:8000/constapp/contactus/" style="color:bisque;margin-right:15px">Contact us</a>
+
+            </li>
+            <li>
+              <div class="collapse navbar-collapse" id="navbarNavDarkDropdown" style="color:bisque;margin-right:35px">
+                <ul class="navbar-nav">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDarkDropdownMenuLink" role="button"
+                           data-bs-toggle="dropdown" aria-expanded="false" style="color:white">
+                            Login
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDarkDropdownMenuLink">
+                            <li><a class="dropdown-item" href="http://127.0.0.1:8000/constapp/suplog/">Supplier
+                                Login</a></li>
+                            <li><a class="dropdown-item" href="http://127.0.0.1:8000/constapp/userlog/">user Login</a></li>
+
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            </li>
+            <li>
+              <button class="btn btn-dark" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight"><i class="fa-solid fa-bars"></i></button>
+
+              <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
+                <div class="offcanvas-header bg bg-dark">
+                  <h5 id="offcanvasRightLabel " style="color:white">WELCOME</h5>
+                  <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                </div>
+                <div class="offcanvas-body">
+                  <a href="http://127.0.0.1:8000/constapp/supprodis/"><i class="fa-solid fa-user" style="color:white">VIEW PROFILE</i></a><br><br>
+<!--                  <a href=""><i class="fa-brands fa-product-hunt" style="color:white">VIEW BOOKED PRODUCTS</i></a><br><br>-->
+
+                  <a href="http://127.0.0.1:8000/constapp/userdispro/"><i class="fa-brands fa-product-hunt" style="color:white">VIEW ALL PRODUCTS</i></a><br><br>
+                     <a href="http://127.0.0.1:8000/constapp/macdisall/" style="color:white"><i class="fa-brands fa-product-hunt">VIEW ALL MACHINES</i></a><br><br>
+                  <a href="http://127.0.0.1:8000/constapp/home/"><i class="fa-sharp fa-solid fa-right-from-bracket" style="color:white">LOGOUT</i></a>
+                </div>
+              </div>
+            </li>
+
+
+        </ul>
+
+    </div>
+
+</nav>
+
+</body>
+</html>

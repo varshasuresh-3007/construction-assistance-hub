@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="https://kit.fontawesome.com/b7e3f22cf6.js" crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div style="text-align:center;background:color">
+    <h1>CONFIRM ORDER</h1>
+<form method="post" class="mt-5">{% csrf_token %}
+<!--    NAME OF COMAPNY: <h3>{{cm}}</h3>-->
+    NAME OF PRODUCT:<h3>{{nm}}</h3>
+    QUANTITY:<h5><input type="number" value="{{qu}}" readonly></h5>
+    PRICE:<h5><input type="number" value="{{pr}}" readonly></h5>
+    TOTAL BILL:<h5><input type="number" value="{{total}}" readonly></h5><br><br>
+    <a href="http://127.0.0.1:8000/constapp/confirmorder/" class="btn btn-primary">CONFIRM ORDER</a>
+
+</form>
+</div>
+
+</body>
+</html>
