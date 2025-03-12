@@ -131,3 +131,10 @@ EMAIL_USE_TLS = True            #TLS -Transport Layer Security
 EMAIL_PORT = 587
 EMAIL_HOST_USER = 'varshamaadhuas30@gmail.com'
 EMAIL_HOST_PASSWORD = 'njxgtgtiisiuabfc'
+
+import os
+from dotenv import load_dotenv
+
+load_dotenv()  # Load environment variables from .env
+
+SECRET_KEY = os.getenv('DJANGO_SECRET_KEY', '%+dyy-f83w7tzf(3nms^33j1!s8_3_^44-8a^pfdb%k=(uo^k%')
