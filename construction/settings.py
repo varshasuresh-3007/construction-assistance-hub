@@ -156,7 +156,8 @@ from dotenv import load_dotenv
 load_dotenv()  # Load environment variables from .env
 
 # Ensure SECRET_KEY is fetched from .env and raise an error if missing
-SECRET_KEY = os.getenv('DJANGO_SECRET_KEY')
+import os
+SECRET_KEY = os.getenv("SECRET_KEY", "%+dyy-f83w7tzf(3nms^33j1!s8_3_^44-8a^pfdb%k=(uo^k%")
 if not SECRET_KEY:
     raise ValueError("Missing DJANGO_SECRET_KEY in .env file")
 
