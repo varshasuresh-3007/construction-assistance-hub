@@ -93,3 +93,27 @@ class confirmmodel(models.Model):
     email = models.EmailField()
     message =models.CharField(max_length=500)
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
