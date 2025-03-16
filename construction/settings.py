@@ -97,8 +97,13 @@ from dotenv import load_dotenv
 load_dotenv()  # Load environment variables from .env
 
 DATABASES = {
-    "default": dj_database_url.config(default=os.getenv("DATABASE_URL"))
+    "default": dj_database_url.config(
+        default=os.getenv("DATABASE_URL"),
+        conn_max_age=600,
+        ssl_require=True  # Force SSL connection
+    )
 }
+
 #postgresql://loan_management_db_hf68_user:6CFbo1xM1l9jHgOJpGt5nB4Xsf7OBzKA@dpg-cv28r40gph6c73bdv23g-a.oregon-postgres.render.com/loan_management_db_hf68
 
 # Password validation
