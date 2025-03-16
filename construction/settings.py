@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/4.1/ref/settings/
 """
 
 from pathlib import Path
+import dj_database_url
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -82,6 +83,16 @@ DATABASES = {
     }
 }
 
+import os
+import dj_database_url
+from dotenv import load_dotenv
+
+load_dotenv()  # Load environment variables from .env
+
+DATABASES = {
+    "default": dj_database_url.config(default=os.getenv("DATABASE_URL"))
+}
+#postgresql://loan_management_db_hf68_user:6CFbo1xM1l9jHgOJpGt5nB4Xsf7OBzKA@dpg-cv28r40gph6c73bdv23g-a.oregon-postgres.render.com/loan_management_db_hf68
 
 # Password validation
 # https://docs.djangoproject.com/en/4.1/ref/settings/#auth-password-validators
@@ -137,4 +148,14 @@ from dotenv import load_dotenv
 
 load_dotenv()  # Load environment variables from .env
 
-SECRET_KEY = os.getenv('DJANGO_SECRET_KEY', '%+dyy-f83w7tzf(3nms^33j1!s8_3_^44-8a^pfdb%k=(uo^k%')
+# Ensure SECRET_KEY is fetched from .env and raise an error if missing
+SECRET_KEY = os.getenv('DJANGO_SECRET_KEY')
+if not SECRET_KEY:
+    raise ValueError("Missing DJANGO_SECRET_KEY in .env file")
+
+# Convert ALLOWED_HOSTS to a list
+ALLOWED_HOSTS = os.getenv('ALLOWED_HOSTS', '').split(',')
+
+# Read DEBUG from .env and convert to boolean
+DEBUG = os.getenv('DEBUG', 'False').lower() == 'true'
+
